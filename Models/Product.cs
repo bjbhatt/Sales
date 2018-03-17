@@ -13,7 +13,9 @@ namespace Sales.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Category { get; set; }
-        public decimal UnitPrice {get; set;}
+        public decimal UnitPrice {get; set; }
+        public string ImageURL { get; set; }
+        public string ThumbnailURL { get; set; }
         public DateTime CreateTimeStamp { get; set; }
         public DateTime? UpdateTimeStamp { get; set; }
 

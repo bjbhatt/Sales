@@ -11,7 +11,9 @@ namespace Sales.Controllers.Resources
         public int Id { get; set; }
         public string Name { get; set; }
         public string Category { get; set; }
-        public decimal UnitPrice {get; set;}
+        public decimal UnitPrice { get; set; }
+        public string ImageURL { get; set; }
+        public string ThumbnailURL { get; set; }
 
         public ICollection<OrderDetailResource> OrderDetails { get; set;}
     }
