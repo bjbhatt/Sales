@@ -9,8 +9,10 @@ namespace Trips.Persistence.Sales.EntityConfigurations
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.ToTable("Products", "dbo").HasKey(c => c.Id);
-            builder.Property(c => c.Name).IsRequired().HasMaxLength(255);
-            builder.Property(c => c.Category).IsRequired().HasMaxLength(255);
+            builder.Property(p => p.Name).IsRequired().HasMaxLength(255);
+            builder.Property(p => p.Category).IsRequired().HasMaxLength(255);
+            builder.Property(p => p.ImageURL).HasMaxLength(1024);
+            builder.Property(p => p.ThumbnailURL).HasMaxLength(1024);
         }
     }
 }
