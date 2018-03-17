@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Sales.Persistence
 {
-    public interface ISalesUnitOfWork : IDisposable
+    public interface IUnitOfWork : IDisposable
     {
         ICustomerRepository Customers { get; }
         IProductRepository Products { get; }

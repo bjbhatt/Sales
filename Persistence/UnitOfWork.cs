@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 
 namespace Sales.Persistence
 {
-    public class SalesUnitOfWork : ISalesUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly SalesDbContext _context;
         public ICustomerRepository Customers { get; private set; }
@@ -10,7 +10,7 @@ namespace Sales.Persistence
         public IOrderRepository Orders { get; private set; }
         public IOrderDetailRepository OrderDetails { get; private set; }
         
-        public SalesUnitOfWork(SalesDbContext context)
+        public UnitOfWork(SalesDbContext context)
         {
             _context = context;
             Customers = new CustomerRepository(_context);

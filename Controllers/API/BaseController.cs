@@ -12,8 +12,8 @@ namespace Sales.Controllers.API
     public class BaseController : Controller
     {
         protected readonly IMapper _mapper;
-        protected readonly ISalesUnitOfWork _unitOfWork;
-        public BaseController(IMapper mapper, ISalesUnitOfWork unitOfWork)
+        protected readonly IUnitOfWork _unitOfWork;
+        public BaseController(IMapper mapper, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
             _unitOfWork = unitOfWork;

@@ -13,7 +13,7 @@ namespace Sales.Controllers.API
     [Route("/api/customers")]
     public class CustomerController : BaseController
     {
-        public CustomerController(IMapper mapper, ISalesUnitOfWork unitOfWork)
+        public CustomerController(IMapper mapper, IUnitOfWork unitOfWork)
             :base(mapper, unitOfWork)
         {
             
