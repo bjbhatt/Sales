@@ -15,6 +15,5 @@ namespace Sales.Controllers.Resources
         public string ImageURL { get; set; }
         public string ThumbnailURL { get; set; }
 
-        public ICollection<OrderDetailResource> OrderDetails { get; set;}
     }
 }

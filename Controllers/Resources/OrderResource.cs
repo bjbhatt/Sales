@@ -11,7 +11,6 @@ namespace Sales.Controllers.Resources
         public int CustomerId { get; set; }
         public DateTime OrderDate { get; set; }
         public CustomerResource Customer { get; set; }
-        public ICollection<OrderDetailResource> OrderDetails { get; set;}
 
     }
 }

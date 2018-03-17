@@ -10,7 +10,5 @@ namespace Sales.Controllers.Resources
         public string Name { get; set; }
         public string ContactName { get; set; }
 
-        public ICollection<OrderResource> Orders { get; set;}
-
     }
 }

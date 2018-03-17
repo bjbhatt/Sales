@@ -45,6 +45,20 @@ namespace Sales.Controllers.API
             return Ok(_mapper.Map<Customer, CustomerResource>(customer));
         }
 
+        [HttpGet, Route("{id:int:min(1)}/orders")]
+        public IActionResult GetOrdersForCustomer(int id) 
+        {
+            var customer = _unitOfWork.Customers.Get(id);
+            if (customer == null) 
+            {
+                return NotFound();
+            }
+
+            var orders = _unitOfWork.Orders.Find(o => o.CustomerId == id);
+
+            return Ok(_mapper.Map<IEnumerable<Order>, IEnumerable<OrderResource>>(orders));
+        }
+
         [HttpPost]
         public IActionResult Insert([FromBody] CustomerResource customerResource) 
         {
