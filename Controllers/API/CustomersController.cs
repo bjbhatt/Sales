@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
@@ -10,10 +10,10 @@ using Sales.Persistence;
 
 namespace Sales.Controllers.API
 {
-    [Route("/api/customers")]
-    public class CustomerController : BaseController
+    [Route("/api/[controller]")]
+    public class CustomersController : BaseController
     {
-        public CustomerController(IMapper mapper, IUnitOfWork unitOfWork)
+        public CustomersController(IMapper mapper, IUnitOfWork unitOfWork)
             :base(mapper, unitOfWork)
         {
             
