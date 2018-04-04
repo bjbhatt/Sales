@@ -8,7 +8,7 @@ namespace Sales.Persistence
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        private readonly SalesDbContext _context;
+        protected readonly SalesDbContext _context;
         public Repository(SalesDbContext context)
         {
             _context = context;

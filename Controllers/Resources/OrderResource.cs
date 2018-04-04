@@ -12,5 +12,5 @@ namespace Sales.Controllers.Resources
         public DateTime OrderDate { get; set; }
         public CustomerResource Customer { get; set; }
 
-    }
+   }
 }

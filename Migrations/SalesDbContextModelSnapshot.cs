@@ -85,7 +85,7 @@ namespace Sales.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderDetail","dbo");
+                    b.ToTable("OrderDetails","dbo");
                 });
 
             modelBuilder.Entity("Sales.Models.Product", b =>

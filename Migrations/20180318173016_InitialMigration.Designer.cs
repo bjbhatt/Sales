@@ -11,8 +11,8 @@ using System;
 namespace Sales.Migrations
 {
     [DbContext(typeof(SalesDbContext))]
-    [Migration("20180317171459_AddedURLForImagesToProduct")]
-    partial class AddedURLForImagesToProduct
+    [Migration("20180318173016_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -86,7 +86,7 @@ namespace Sales.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderDetail","dbo");
+                    b.ToTable("OrderDetails","dbo");
                 });
 
             modelBuilder.Entity("Sales.Models.Product", b =>
@@ -100,13 +100,15 @@ namespace Sales.Migrations
 
                     b.Property<DateTime>("CreateTimeStamp");
 
-                    b.Property<string>("ImageURL");
+                    b.Property<string>("ImageURL")
+                        .HasMaxLength(1024);
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255);
 
-                    b.Property<string>("ThumbnailURL");
+                    b.Property<string>("ThumbnailURL")
+                        .HasMaxLength(1024);
 
                     b.Property<decimal>("UnitPrice");
 

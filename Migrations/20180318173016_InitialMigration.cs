@@ -38,7 +38,9 @@ namespace Sales.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Category = table.Column<string>(maxLength: 255, nullable: false),
                     CreateTimeStamp = table.Column<DateTime>(nullable: false),
+                    ImageURL = table.Column<string>(maxLength: 1024, nullable: true),
                     Name = table.Column<string>(maxLength: 255, nullable: false),
+                    ThumbnailURL = table.Column<string>(maxLength: 1024, nullable: true),
                     UnitPrice = table.Column<decimal>(nullable: false),
                     UpdateTimeStamp = table.Column<DateTime>(nullable: true)
                 },
@@ -72,7 +74,7 @@ namespace Sales.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "OrderDetail",
+                name: "OrderDetails",
                 schema: "dbo",
                 columns: table => new
                 {
@@ -87,7 +89,7 @@ namespace Sales.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderDetail", x => x.Id);
+                    table.PrimaryKey("PK_OrderDetails", x => x.Id);
                     table.ForeignKey(
                         name: "FK_OrderDetail_Order",
                         column: x => x.OrderId,
@@ -105,15 +107,15 @@ namespace Sales.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderDetail_OrderId",
+                name: "IX_OrderDetails_OrderId",
                 schema: "dbo",
-                table: "OrderDetail",
+                table: "OrderDetails",
                 column: "OrderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderDetail_ProductId",
+                name: "IX_OrderDetails_ProductId",
                 schema: "dbo",
-                table: "OrderDetail",
+                table: "OrderDetails",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
@@ -126,7 +128,7 @@ namespace Sales.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "OrderDetail",
+                name: "OrderDetails",
                 schema: "dbo");
 
             migrationBuilder.DropTable(

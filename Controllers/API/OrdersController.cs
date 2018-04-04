@@ -54,9 +54,9 @@ namespace Sales.Controllers.API
                 return NotFound();
             }
 
-            var orderdetails = _unitOfWork.OrderDetails.Find(o => o.OrderId == id);
+            var orderDetails = _unitOfWork.OrderDetails.Find(o => o.OrderId == id);
 
-            return Ok(_mapper.Map<IEnumerable<OrderDetail>, IEnumerable<OrderDetailResource>>(orderdetails));
+            return Ok(_mapper.Map<IEnumerable<OrderDetail>, IEnumerable<OrderDetailResource>>(orderDetails));
         }
 
         [HttpPost]
